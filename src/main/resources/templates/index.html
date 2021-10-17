@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myBlog</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+      <div class="asd">
+        <div id="formbox" class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="loginslide()">Login</button>
+                <button type="button" class="toggle-btn" onclick="registerslide()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="/img/fb.png">
+                <img src="/img/tw.png">
+                <img src="/img/google.png">
+            </div>
+            <form id="login" class="input-group" th:action="@{/loginForm}" method="post">
+                <input type="text" name="email" class="input-field" placeholder="Email" required>
+                <input type="text" name="password" class="input-field" placeholder="Password" required>
+                <input type="checkbox" class="check-box"><span>Remember me</span>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <form id = "register" class="input-group" th:action="@{/register}" method="post">
+                <input type="text" name="email" class="input-field" placeholder="Email" required>
+                <input type="text" name="firstname" class="input-field" placeholder="Firstname" required>
+                <input type="text" name="lastname" class="input-field" placeholder="Lastname" required>
+                <input type="text" name="birthYear" class="input-field" placeholder="Year" required>
+                <input type="text" name="birthMonth" class="input-field" placeholder="Month" required>
+                <input type="text" name="birthDay" class="input-field" placeholder="Day" required>
+                <input type="text" name="username" class="input-field" placeholder="Username" required>
+                <input type="text" name="password" class="input-field" placeholder="Password" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+
+      </div>
+
+<script>
+    var x= document.getElementById("login")
+    var y= document.getElementById("register")
+    var z= document.getElementById("btn")
+    var q=document.getElementById("formbox")
+
+    function registerslide(){
+        x.style.left="-400px";
+        y.style.left="50px";
+        z.style.left="110px";
+        q.style.height="750px";
+    }
+    function loginslide(){
+        x.style.left="50px";
+        y.style.left="450px";
+        z.style.left="0";
+        q.style.height="450px";
+    }
+</script>
+</body>
+</html>
