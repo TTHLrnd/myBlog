@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>myBlog</title>
@@ -18,10 +19,16 @@
                 <img src="/img/tw.png">
                 <img src="/img/google.png">
             </div>
-            <form id="login" class="input-group" th:action="@{/loginForm}" method="post">
-                <input type="text" name="email" class="input-field" placeholder="Email" required>
-                <input type="password" name="password" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"><span>Remember me</span>
+            <form id="login" name="f" class="input-group" th:action="@{/login}" method="post">
+                <div th:if="${param.error}" class="alert alert-error">
+                    Invalid username or password.
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success">
+                    You have been logged out.
+                </div>
+                <input type="text" name="username" class="input-field" placeholder="Email">
+                <input type="password" name="password" class="input-field" placeholder="Password">
+                <input type="checkbox" name="rememberme"  class="check-box"><span>Remember me</span>
                 <button type="submit" class="submit-btn">Login</button>
             </form>
             <form id = "register" class="input-group" th:action="@{/register}" method="post">

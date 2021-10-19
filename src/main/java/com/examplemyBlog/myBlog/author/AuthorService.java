@@ -2,7 +2,6 @@ package com.examplemyBlog.myBlog.author;
 
 
 
-import com.examplemyBlog.myBlog.home.LoginForm;
 import com.examplemyBlog.myBlog.registration.token.ConfirmationToken;
 import com.examplemyBlog.myBlog.registration.token.ConfirmationTokenRepository;
 import lombok.AllArgsConstructor;
@@ -14,7 +13,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 import java.util.UUID;
 @Configuration
 @Service
@@ -63,7 +61,7 @@ public class AuthorService implements UserDetailsService {
                 .setEnabled(true);
     }
 
-    public String loginAuthor(LoginForm loginForm){
+/*    public String loginAuthor(LoginForm loginForm){
         Optional<Author> author =  authorRepository.findByEmail(loginForm.getEmail());
         if (author.isEmpty()){
             throw  new IllegalStateException("User not found");
@@ -71,6 +69,7 @@ public class AuthorService implements UserDetailsService {
         if (!bCryptPasswordEncoder.matches(loginForm.getPassword(), author.get().getPassword())){
             throw new IllegalStateException("Wrong password");
         }
+        //TODO Spring method of security
         return "homepage";
-    }
+    }*/
 }
