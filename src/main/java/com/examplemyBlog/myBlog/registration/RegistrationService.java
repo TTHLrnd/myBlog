@@ -1,11 +1,11 @@
 package com.examplemyBlog.myBlog.registration;
 
-import com.examplemyBlog.myBlog.email.EmailSender;
 import com.examplemyBlog.myBlog.author.Author;
+import com.examplemyBlog.myBlog.author.AuthorService;
 import com.examplemyBlog.myBlog.author.Role;
+import com.examplemyBlog.myBlog.email.EmailSender;
 import com.examplemyBlog.myBlog.registration.token.ConfirmationToken;
 import com.examplemyBlog.myBlog.registration.token.ConfirmationTokenService;
-import com.examplemyBlog.myBlog.author.AuthorService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

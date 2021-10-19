@@ -1,7 +1,6 @@
 package com.examplemyBlog.myBlog.email;
 
 import lombok.AllArgsConstructor;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.javamail.JavaMailSender;
