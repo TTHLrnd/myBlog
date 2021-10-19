@@ -50,30 +50,6 @@ public class RegistrationService {
         return token;
     }
 
-/*    public String registerAdmin(RegistrationRequest request) {
-        boolean isValidEmail = emailValidator.test(request.getEmail());
-        if (!isValidEmail) {
-            throw new IllegalStateException("Email not valid");
-        }
-        return authorService.signUpAuthor(
-                new Author(
-                        request.getUsername(),
-                        request.getFirstname(),
-                        request.getLastname(),
-                        LocalDate.of(Integer.parseInt(request.getBirthYear()),
-                                Integer.parseInt(request.getBirthMonth()),
-                                Integer.parseInt(request.getBirthDay())),
-                        request.getEmail(),
-                        request.getPassword(),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        Role.user,
-                        false,
-                        true
-                )
-        );
-    }*/
-
     @Transactional
     public String confirmToken(String token){
         ConfirmationToken confirmationToken = confirmationTokenService
