@@ -47,7 +47,7 @@ public class RegistrationService {
         String link = "http://localhost:8080/blog/registration/confirm?token=" + token;
         emailSender.send(request.getEmail(),
                 buildEmail(request.getFirstname(),link));
-        return token;
+        return "/login";
     }
 
     @Transactional
