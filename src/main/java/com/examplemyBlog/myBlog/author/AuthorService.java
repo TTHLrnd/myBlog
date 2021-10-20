@@ -38,6 +38,7 @@ public class AuthorService implements UserDetailsService {
             if (authorExist.get().getEnabled()) {
                 throw new IllegalStateException("Email already taken");
             } else {
+                //TODO email resent message
                 return createToken(authorExist.get());
             }
         }
