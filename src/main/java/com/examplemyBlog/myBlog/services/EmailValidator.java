@@ -1,4 +1,4 @@
-package com.examplemyBlog.myBlog.registration;
+package com.examplemyBlog.myBlog.services;
 
 import org.springframework.stereotype.Service;
 

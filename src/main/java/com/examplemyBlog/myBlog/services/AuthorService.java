@@ -1,9 +1,11 @@
-package com.examplemyBlog.myBlog.author;
+package com.examplemyBlog.myBlog.services;
 
 
 
-import com.examplemyBlog.myBlog.registration.token.ConfirmationToken;
-import com.examplemyBlog.myBlog.registration.token.ConfirmationTokenRepository;
+import com.examplemyBlog.myBlog.model.Author;
+import com.examplemyBlog.myBlog.repositories.AuthorRepository;
+import com.examplemyBlog.myBlog.model.ConfirmationToken;
+import com.examplemyBlog.myBlog.repositories.ConfirmationTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;

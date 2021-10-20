@@ -1,6 +1,6 @@
-package com.examplemyBlog.myBlog.registration.token;
+package com.examplemyBlog.myBlog.model;
 
-import com.examplemyBlog.myBlog.author.Author;
+import com.examplemyBlog.myBlog.model.Author;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

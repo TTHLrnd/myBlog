@@ -1,5 +1,6 @@
-package com.examplemyBlog.myBlog.author;
+package com.examplemyBlog.myBlog.repositories;
 
+import com.examplemyBlog.myBlog.model.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

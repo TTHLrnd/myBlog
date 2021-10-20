@@ -1,5 +1,6 @@
-package com.examplemyBlog.myBlog.registration.token;
+package com.examplemyBlog.myBlog.repositories;
 
+import com.examplemyBlog.myBlog.model.ConfirmationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,6 @@
 package com.examplemyBlog.myBlog.author;
 
+import com.examplemyBlog.myBlog.services.AuthorService;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.examplemyBlog.myBlog.home;
+package com.examplemyBlog.myBlog.controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;

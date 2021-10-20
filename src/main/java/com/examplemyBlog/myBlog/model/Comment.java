@@ -1,7 +1,5 @@
-package com.examplemyBlog.myBlog.comment;
+package com.examplemyBlog.myBlog.model;
 
-import com.examplemyBlog.myBlog.author.Author;
-import com.examplemyBlog.myBlog.blog.Blog;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.examplemyBlog.myBlog.blog;
+package com.examplemyBlog.myBlog.model;
 
 public enum Category {
     Art,

@@ -1,5 +1,7 @@
-package com.examplemyBlog.myBlog.registration;
+package com.examplemyBlog.myBlog.controllers;
 
+import com.examplemyBlog.myBlog.model.RegistrationRequest;
+import com.examplemyBlog.myBlog.services.RegistrationService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;

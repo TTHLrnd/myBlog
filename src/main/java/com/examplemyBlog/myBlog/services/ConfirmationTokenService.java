@@ -1,5 +1,7 @@
-package com.examplemyBlog.myBlog.registration.token;
+package com.examplemyBlog.myBlog.services;
 
+import com.examplemyBlog.myBlog.model.ConfirmationToken;
+import com.examplemyBlog.myBlog.repositories.ConfirmationTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

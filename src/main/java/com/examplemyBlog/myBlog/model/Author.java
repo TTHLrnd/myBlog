@@ -1,7 +1,8 @@
-package com.examplemyBlog.myBlog.author;
+package com.examplemyBlog.myBlog.model;
 
-import com.examplemyBlog.myBlog.blog.Blog;
-import com.examplemyBlog.myBlog.comment.Comment;
+import com.examplemyBlog.myBlog.model.Blog;
+import com.examplemyBlog.myBlog.model.Comment;
+import com.examplemyBlog.myBlog.model.Role;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
