@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,7 @@ public class AuthFailureHandler implements AuthenticationFailureHandler {
                 "timestamp",
                 Calendar.getInstance().getTime());
         data.put(
-                "exception",
+                "Unsuccessful login",
                 e.getMessage());
 
         response.getOutputStream()

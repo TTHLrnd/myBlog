@@ -67,5 +67,4 @@ public class AuthorService implements UserDetailsService {
                 orElseThrow(() -> new IllegalStateException("user not found"))
                 .setEnabled(true);
     }
-
 }

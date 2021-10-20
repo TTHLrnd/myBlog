@@ -31,14 +31,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
                 .formLogin().loginPage("/login").permitAll()
                 .defaultSuccessUrl("/homepage")
-                .failureHandler(authFailureHandler);
-        /*
+                .failureForwardUrl("/login")
             .and()
-                .rememberMe()
-                .key("rem-me-key")
-                .rememberMeParameter("rememberme")
-                .rememberMeCookieName("rememberlogin")
-                .tokenValiditySeconds(2629743);*/
+                .logout()
+                .logoutSuccessUrl("/login");
         //TODO rememberme checkbox config
     }
 
