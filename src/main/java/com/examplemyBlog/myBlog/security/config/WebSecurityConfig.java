@@ -18,6 +18,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final AuthorService authorService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final AuthFailureHandler authFailureHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
@@ -27,10 +28,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**")
                 .permitAll()
                 .anyRequest().authenticated()
-                .and()
+            .and()
                 .formLogin().loginPage("/login").permitAll()
                 .defaultSuccessUrl("/homepage")
-                .failureUrl("/login");
+                .failureHandler(authFailureHandler);
+        /*
+            .and()
+                .rememberMe()
+                .key("rem-me-key")
+                .rememberMeParameter("rememberme")
+                .rememberMeCookieName("rememberlogin")
+                .tokenValiditySeconds(2629743);*/
         //TODO rememberme checkbox config
     }
 
