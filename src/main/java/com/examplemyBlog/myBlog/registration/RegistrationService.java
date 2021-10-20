@@ -28,7 +28,7 @@ public class RegistrationService {
         if (!isValidEmail) {
             throw new IllegalStateException("Email not valid");
         }
-        String token =  authorService.signUpAuthor(
+        ConfirmationToken token =  authorService.signUpAuthor(
                 new Author(
                     request.getUsername(),
                         request.getFirstname(),
@@ -44,9 +44,9 @@ public class RegistrationService {
                 )
         );
 
-        String link = "http://localhost:8080/blog/registration/confirm?token=" + token;
-        emailSender.send(request.getEmail(),
-                buildEmail(request.getFirstname(),link));
+        String link = "http://localhost:8080/blog/registration/confirm?token=" + token.getToken();
+        emailSender.send(token.getAuthor().getEmail(),
+                buildEmail(token.getAuthor().getFirstname(),link));
         return "/login";
     }
 

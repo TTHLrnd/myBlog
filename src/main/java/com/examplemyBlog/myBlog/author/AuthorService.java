@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.UUID;
 @Configuration
 @Service
@@ -31,18 +32,24 @@ public class AuthorService implements UserDetailsService {
                         new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email)));
     }
 
-    public String signUpAuthor(Author author) {
-        boolean authorExist = authorRepository.findByEmail(author.getEmail()).isPresent();
-        if (authorExist){
-            //TODO check attributes of same user
-            //TODO if email not confirmed send confirmation email
-            throw new IllegalStateException("Email already taken");
+    public ConfirmationToken signUpAuthor(Author author) {
+        Optional<Author> authorExist = authorRepository.findByEmail(author.getEmail());
+        if (authorExist.isPresent()){
+            if (authorExist.get().getEnabled()) {
+                throw new IllegalStateException("Email already taken");
+            } else {
+                return createToken(authorExist.get());
+            }
         }
 
         String encodedPassword = bCryptPasswordEncoder.encode(author.getPassword());
         author.setPassword(encodedPassword);
         authorRepository.save(author);
 
+        return createToken(author);
+    }
+
+    private ConfirmationToken createToken(Author author){
         String token =  UUID.randomUUID().toString();
         ConfirmationToken confirmationToken = new ConfirmationToken(
                 token,
@@ -51,8 +58,7 @@ public class AuthorService implements UserDetailsService {
                 author
         );
         confirmationTokenRepository.save(confirmationToken);
-
-        return token;
+        return confirmationToken;
     }
 
     public void enableAuthor(String email) {
@@ -61,15 +67,4 @@ public class AuthorService implements UserDetailsService {
                 .setEnabled(true);
     }
 
-/*    public String loginAuthor(LoginForm loginForm){
-        Optional<Author> author =  authorRepository.findByEmail(loginForm.getEmail());
-        if (author.isEmpty()){
-            throw  new IllegalStateException("User not found");
-        }
-        if (!bCryptPasswordEncoder.matches(loginForm.getPassword(), author.get().getPassword())){
-            throw new IllegalStateException("Wrong password");
-        }
-        //TODO Spring method of security
-        return "homepage";
-    }*/
 }
