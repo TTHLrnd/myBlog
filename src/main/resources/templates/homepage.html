@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-      <div><a href="/login" value="@{/logout}">Logout</a></div>
+<div>
+    <div class="menu">
+        <a href="/blogs">Blogs</a>
+    </div>
+    <div class="logout-btn">
+        <form name="logout" method="post" th:action="@{/logout}">
+            <button type="submit" value="Logout">Logout</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

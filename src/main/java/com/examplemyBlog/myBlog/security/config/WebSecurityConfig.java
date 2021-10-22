@@ -22,7 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http
-                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/**")
                 .permitAll()
@@ -32,8 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/homepage")
                 .failureForwardUrl("/login")
             .and()
-                .logout()
-                .logoutSuccessUrl("/login");
+                .logout().logoutSuccessUrl("/login");
         //TODO rememberme checkbox config
     }
 
