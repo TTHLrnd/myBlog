@@ -68,7 +68,7 @@ public class RegistrationService {
         authorService.enableAuthor(
                 confirmationToken.getAuthor().getEmail()
         );
-        return "Confirmed";
+        return "/homepage";
     }
 
     private String buildEmail(String name, String link) {

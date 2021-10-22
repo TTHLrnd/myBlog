@@ -26,12 +26,14 @@
                 <div th:if="${param.logout}" class="alert alert-success">
                     You have been logged out.
                 </div>
+
                 <input type="text" name="username" class="input-field" placeholder="Username">
                 <input type="password" name="password" class="input-field" placeholder="Password">
                 <input type="checkbox" name="rememberme"  class="check-box"><span>Remember me</span>
                 <button type="submit" class="submit-btn">Login</button>
+                <a id="nonloginlink" href="/homepage">Continue without login</a>
             </form>
-            <a id="nonloginlink" href="/homepage">Continue without login</a>
+
             <form id = "register" class="input-group" th:action="@{/register}" method="post">
                 <input type="text" name="email" class="input-field" placeholder="Email" required>
                 <input type="text" name="firstname" class="input-field" placeholder="Firstname" required>

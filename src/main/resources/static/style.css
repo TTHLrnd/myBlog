@@ -101,3 +101,11 @@ span{
 }#register{
     left: 450px;
 }
+#nonloginlink{
+    position: absolute;
+    text-decoration: none;
+    text-align: center;
+    text-decoration-color: green;
+    margin: 10px 60px;
+    color: green;
+}
