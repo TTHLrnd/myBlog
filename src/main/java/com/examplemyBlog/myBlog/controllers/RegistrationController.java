@@ -1,6 +1,6 @@
 package com.examplemyBlog.myBlog.controllers;
 
-import com.examplemyBlog.myBlog.model.RegistrationRequest;
+import com.examplemyBlog.myBlog.forms.RegistrationRequest;
 import com.examplemyBlog.myBlog.services.RegistrationService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

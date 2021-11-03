@@ -30,4 +30,12 @@ public class Blog {
     @ManyToOne
     private Template template;
 
+    public Blog(String title, Category category, String content, Template template) {
+        this.title = title;
+        this.category = category;
+        this.content = content;
+        this.template = template;
+    }
 }
+
+

@@ -1,4 +1,4 @@
-package com.examplemyBlog.myBlog.model;
+package com.examplemyBlog.myBlog.forms;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

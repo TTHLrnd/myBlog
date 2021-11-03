@@ -3,7 +3,7 @@ package com.examplemyBlog.myBlog.services;
 import com.examplemyBlog.myBlog.model.Author;
 import com.examplemyBlog.myBlog.model.Role;
 import com.examplemyBlog.myBlog.repositories.EmailSender;
-import com.examplemyBlog.myBlog.model.RegistrationRequest;
+import com.examplemyBlog.myBlog.forms.RegistrationRequest;
 import com.examplemyBlog.myBlog.model.ConfirmationToken;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
